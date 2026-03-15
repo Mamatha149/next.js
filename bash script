@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Creating Next.js application..."
+
+# Create Next.js app
+npx create-next-app@latest nextjs-demo --use-npm --yes
+
+# Go to project folder
+cd nextjs-demo
+
+echo "Installing dependencies..."
+npm install
+
+echo "Starting Next.js server..."
+
+# Run development server
+npm run dev
