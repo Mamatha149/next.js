@@ -1,17 +1,18 @@
-#!/bin/bash
+// app/page.js (or .tsx for TypeScript)
+import Link from 'next/link'; // Import the Link component for client-side navigation
 
-echo "Creating Next.js application..."
+const HomePage = () => {
+  return (
+    <div>
+      <h1>Welcome to Next.js!</h1>
+      <p>This is a simple Next.js application using the App Router.</p>
+      {/* Use the Link component for navigation to other pages */}
+      <Link href="/about">
+        {/* In newer Next.js versions, the <a> tag is automatically included inside <Link> */}
+        Go to About Page
+      </Link>
+    </div>
+  );
+};
 
-# Create Next.js app
-npx create-next-app@latest nextjs-demo --use-npm --yes
-
-# Go to project folder
-cd nextjs-demo
-
-echo "Installing dependencies..."
-npm install
-
-echo "Starting Next.js server..."
-
-# Run development server
-npm run dev
+export default HomePage;
