@@ -1,18 +1,10 @@
-// app/page.js (or .tsx for TypeScript)
-import Link from 'next/link'; // Import the Link component for client-side navigation
-
-const HomePage = () => {
+export default function Home() {
   return (
     <div>
-      <h1>Welcome to Next.js!</h1>
-      <p>This is a simple Next.js application using the App Router.</p>
-      {/* Use the Link component for navigation to other pages */}
-      <Link href="/about">
-        {/* In newer Next.js versions, the <a> tag is automatically included inside <Link> */}
-        Go to About Page
-      </Link>
+      <h1>Hello from Next.js 🚀</h1>
+      <p>Deployed using Azure Pipeline</p>
     </div>
   );
-};
+}
 
 export default HomePage;
