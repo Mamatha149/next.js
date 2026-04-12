@@ -1,8 +1,23 @@
-export default function Home() {
-  return (
-    <main style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>🚀 Hello from Next.js App</h1>
-      <p>This project is pushed to GitHub</p>
-    </main>
-  );
-}
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: NodeTool@0
+  inputs:
+    versionSpec: '18.x'
+
+- script: npm install
+  displayName: Install
+
+- script: npm run build
+  displayName: Build
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'YOUR-SERVICE-CONNECTION'
+    appName: 'YOUR-APP-NAME'
+    package: '.'
