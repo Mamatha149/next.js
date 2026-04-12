@@ -7,7 +7,32 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '18.x'
+    versionSpec: 'trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: 'v18.14.0'
+
+- script: |
+    npm install
+    npm run build
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: .
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/app.zip
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: $(Build.ArtifactStagingDirectory)
+    artifactName: drop
+'
 
 - script: |
     npm install
