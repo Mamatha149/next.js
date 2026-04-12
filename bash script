@@ -18,6 +18,6 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: 'YOUR-SERVICE-CONNECTION'
-    appName: 'YOUR-APP-NAME'
+    azureSubscription: 'Azure subscription 1'
+    appName: 'mamatha-nextjs-app'
     package: '.'
